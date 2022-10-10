@@ -24,7 +24,7 @@ public class Machine implements Serializable {
     private String brand;
     private Integer years;
     private String description;
-    
+      
     @ManyToOne
     @JoinColumn(name ="categoryId")
     @JsonIgnoreProperties("machines")
@@ -38,6 +38,7 @@ public class Machine implements Serializable {
     @JsonIgnoreProperties("machine")
     private List<Reservation> reservations;
 
+    
     public Integer getId() {
         return id;
     }
@@ -62,7 +63,7 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
-    public Integer getYear() {
+        public Integer getYear() {
         return years;
     }
 
@@ -101,4 +102,5 @@ public class Machine implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+    
 }
