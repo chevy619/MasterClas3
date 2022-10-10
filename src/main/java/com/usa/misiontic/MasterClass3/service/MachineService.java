@@ -44,6 +44,18 @@ public class MachineService {
                 if(p.getYear()!=null){
                     q.get().setYear(p.getYear());
                 }
+                if(p.getBrand()!=null){
+                    q.get().setBrand(p.getBrand());
+                }
+                if(p.getDescription()!=null){
+                    q.get().setDescription(p.getDescription());
+                }
+                if(p.getMessages()!=null){
+                    q.get().setMessages(p.getMessages());
+                }
+                if(p.getReservations()!=null){
+                    q.get().setReservations(p.getReservations());
+                }
                 if(p.getCategory()!=null){
                     q.get().setCategory(p.getCategory());
                 }

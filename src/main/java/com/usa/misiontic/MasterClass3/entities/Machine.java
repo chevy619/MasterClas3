@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="machine")
-@JsonPropertyOrder({"id", "name", "brand", "year", "descriptions", "category", "messages", "reservations"})
+@JsonPropertyOrder({"id", "name", "brand", "year", "description", "category", "messages", "reservations"})
 public class Machine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Machine implements Serializable {
     private String name;
     private String brand;
     private Integer years;
-    private String descriptions;
+    private String description;
       
     @ManyToOne
     @JoinColumn(name ="categoryId")
@@ -72,12 +72,12 @@ public class Machine implements Serializable {
         this.years = year;
     }
 
-    public String getDescriptions() {
-        return descriptions;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescriptions(String descriptions) {
-        this.descriptions = descriptions;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Category getCategory() {
@@ -104,7 +104,7 @@ public class Machine implements Serializable {
         this.reservations = reservations;
     }
 
-   
+    
 
     
    
