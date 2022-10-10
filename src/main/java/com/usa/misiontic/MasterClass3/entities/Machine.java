@@ -22,7 +22,7 @@ public class Machine implements Serializable {
     private Integer id;
     private String name;
     private String brand;
-    private Integer years;
+    private Integer year;
     private String description;
       
     @ManyToOne
@@ -38,7 +38,6 @@ public class Machine implements Serializable {
     @JsonIgnoreProperties("machine")
     private List<Reservation> reservations;
 
-    
     public Integer getId() {
         return id;
     }
@@ -63,12 +62,12 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
-        public Integer getYear() {
-        return years;
+    public Integer getYear() {
+        return year;
     }
 
     public void setYear(Integer year) {
-        this.years = year;
+        this.year = year;
     }
 
     public String getDescription() {
@@ -102,5 +101,8 @@ public class Machine implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
+    
+   
     
 }
