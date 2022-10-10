@@ -2,6 +2,7 @@
 package com.usa.misiontic.MasterClass3.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -16,12 +17,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="machine")
+@JsonPropertyOrder({"id", "name", "brand", "years", "description", "category", "messages", "reservations"})
 public class Machine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ids;
-    private String namess;
-    private String brands;
+    private Integer id;
+    private String name;
+    private String brand;
     private Integer years;
     private String descriptions;
       
@@ -39,27 +41,27 @@ public class Machine implements Serializable {
     private List<Reservation> reservations;
 
     public Integer getId() {
-        return ids;
+        return id;
     }
 
     public void setId(Integer id) {
-        this.ids = id;
+        this.id = id;
     }
 
     public String getName() {
-        return namess;
+        return name;
     }
 
     public void setName(String name) {
-        this.namess = name;
+        this.name = name;
     }
 
     public String getBrand() {
-        return brands;
+        return brand;
     }
 
     public void setBrand(String brand) {
-        this.brands = brand;
+        this.brand = brand;
     }
 
     public Integer getYear() {
@@ -70,12 +72,12 @@ public class Machine implements Serializable {
         this.years = year;
     }
 
-    public String getDescription() {
+    public String getDescriptions() {
         return descriptions;
     }
 
-    public void setDescription(String description) {
-        this.descriptions = description;
+    public void setDescriptions(String descriptions) {
+        this.descriptions = descriptions;
     }
 
     public Category getCategory() {
@@ -101,6 +103,8 @@ public class Machine implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
+   
 
     
    
