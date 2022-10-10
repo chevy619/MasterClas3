@@ -1,42 +1,42 @@
 
 package com.usa.misiontic.MasterClass3.service;
 
-import com.usa.misiontic.MasterClass3.entities.Product;
-import com.usa.misiontic.MasterClass3.repository.ProductRepository;
+import com.usa.misiontic.MasterClass3.entities.Machine;
+import com.usa.misiontic.MasterClass3.repository.MachineRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductService {
+public class MachineService {
     @Autowired
-    private ProductRepository productRepository;
+    private MachineRepository machineRepository;
     
-    public List<Product> getAll(){
-        return productRepository.getAll();
+    public List<Machine> getAll(){
+        return machineRepository.getAll();
     }
     
-    public Optional<Product> getProduct(int id){
-        return productRepository.getProduct(id);
+    public Optional<Machine> getProduct(int id){
+        return machineRepository.getMachine(id);
     }
     
-    public Product save(Product p){
+    public Machine save(Machine p){
         if(p.getId()==null){
-            return productRepository.save(p);
+            return machineRepository.save(p);
         }else{
-            Optional<Product> e = productRepository.getProduct(p.getId());
+            Optional<Machine> e = machineRepository.getMachine(p.getId());
             if(e.isPresent()){
                 return p;
             }else{
-                return productRepository.save(p);
+                return machineRepository.save(p);
             }
         }
     }
     
-    public Product update(Product p){
+    public Machine update(Machine p){
         if(p.getId()!=null){
-            Optional<Product> q = productRepository.getProduct(p.getId());
+            Optional<Machine> q = machineRepository.getMachine(p.getId());
             if(q.isPresent()){
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
@@ -47,7 +47,7 @@ public class ProductService {
                 if(p.getCategory()!=null){
                     q.get().setCategory(p.getCategory());
                 }
-                productRepository.save(q.get());
+                machineRepository.save(q.get());
                 return q.get();
             }else{
                 return p;
@@ -59,10 +59,10 @@ public class ProductService {
     
     public boolean delete(int id){
         boolean flag = false;
-        Optional<Product> e = productRepository.getProduct(id);
+        Optional<Machine> e = machineRepository.getMachine(id);
         
         if(e.isPresent()){
-            productRepository.delete(e.get());
+            machineRepository.delete(e.get());
             flag = true;
         }        
         return flag;
