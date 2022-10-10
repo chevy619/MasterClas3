@@ -19,11 +19,11 @@ import javax.persistence.Table;
 public class Machine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String name;
-    private String brand;
-    private Integer year;
-    private String description;
+    private Integer ids;
+    private String namess;
+    private String brands;
+    private Integer years;
+    private String descriptions;
       
     @ManyToOne
     @JoinColumn(name ="categoryId")
@@ -39,43 +39,43 @@ public class Machine implements Serializable {
     private List<Reservation> reservations;
 
     public Integer getId() {
-        return id;
+        return ids;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.ids = id;
     }
 
     public String getName() {
-        return name;
+        return namess;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.namess = name;
     }
 
     public String getBrand() {
-        return brand;
+        return brands;
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        this.brands = brand;
     }
 
     public Integer getYear() {
-        return year;
+        return years;
     }
 
     public void setYear(Integer year) {
-        this.year = year;
+        this.years = year;
     }
 
     public String getDescription() {
-        return description;
+        return descriptions;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.descriptions = description;
     }
 
     public Category getCategory() {
