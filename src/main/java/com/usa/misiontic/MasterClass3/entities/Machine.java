@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="machine")
-@JsonPropertyOrder({"id", "name", "brand", "years", "description", "category", "messages", "reservations"})
+@JsonPropertyOrder({"id", "name", "brand", "year", "descriptions", "category", "messages", "reservations"})
 public class Machine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
