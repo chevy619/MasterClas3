@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/Machine")
+@JsonPropertyOrder({"id", "name", "brand", "years", "description", "category", "messages", "reservations"})
 public class MachineController {
     @Autowired
     private MachineService machineService;
