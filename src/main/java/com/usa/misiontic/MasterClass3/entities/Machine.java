@@ -54,22 +54,6 @@ public class Machine implements Serializable {
         this.name = name;
     }
 
-    public Integer getYear() {
-        return years;
-    }
-
-    public void setYear(Integer year) {
-        this.years = year;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
     public String getBrand() {
         return brand;
     }
@@ -78,12 +62,28 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
+    public Integer getYears() {
+        return years;
+    }
+
+    public void setYears(Integer years) {
+        this.years = years;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public List<Message> getMessages() {
@@ -101,6 +101,8 @@ public class Machine implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
+
     
     
 }
