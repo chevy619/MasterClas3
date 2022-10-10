@@ -41,8 +41,8 @@ public class MachineService {
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
                 }
-                if(p.getYears()!=null){
-                    q.get().setYears(p.getYears());
+                if(p.getYear()!=null){
+                    q.get().setYear(p.getYear());
                 }
                 if(p.getCategory()!=null){
                     q.get().setCategory(p.getCategory());

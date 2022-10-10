@@ -62,12 +62,12 @@ public class Machine implements Serializable {
         this.brand = brand;
     }
 
-    public Integer getYears() {
+    public Integer getYear() {
         return years;
     }
 
-    public void setYears(Integer years) {
-        this.years = years;
+    public void setYear(Integer year) {
+        this.years = year;
     }
 
     public String getDescription() {
@@ -101,8 +101,4 @@ public class Machine implements Serializable {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-
-
-    
-    
 }
