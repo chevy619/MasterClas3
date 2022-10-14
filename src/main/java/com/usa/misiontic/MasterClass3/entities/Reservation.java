@@ -42,8 +42,6 @@ public class Reservation implements Serializable {
     private Client client;
     
     
-    
-
     public Integer getIdReservation() {
         return idReservation;
     }
