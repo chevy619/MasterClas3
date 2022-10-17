@@ -6,6 +6,7 @@ import com.usa.misiontic.MasterClass3.entities.Reservation;
 import com.usa.misiontic.MasterClass3.service.ReservationService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,7 @@ public class ReservationController {
     private ReservationService reservationService;
     
     @GetMapping("/all")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     public List<Reservation> getAll(){
         return reservationService.getAll();
     }
