@@ -2,6 +2,7 @@
 package com.usa.misiontic.MasterClass3.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.Date;
@@ -25,11 +26,13 @@ public class Reservation implements Serializable {
     private Integer idReservation;
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    @DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    //@DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private Date startDate;
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    @DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    //@DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private Date devolutionDate;
     
     private String status;
