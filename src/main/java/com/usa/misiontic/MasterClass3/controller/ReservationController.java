@@ -1,6 +1,8 @@
 
 package com.usa.misiontic.MasterClass3.controller;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.usa.misiontic.MasterClass3.entities.Message;
 import com.usa.misiontic.MasterClass3.entities.Reservation;
 import com.usa.misiontic.MasterClass3.service.ReservationService;
@@ -20,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/Reservation")
+@JsonPropertyOrder({"id","startDate","devolutionDate","status","score","machine","client"})
+@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;

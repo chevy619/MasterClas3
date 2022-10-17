@@ -27,12 +27,12 @@ public class Reservation implements Serializable {
     
     @Temporal(javax.persistence.TemporalType.DATE)
     //@DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private Date startDate;
     
     @Temporal(javax.persistence.TemporalType.DATE)
     //@DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private Date devolutionDate;
     
     private String status;
