@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/Reservation")
 @JsonPropertyOrder({"id","startDate","devolutionDate","status","score","machine","client"})
-@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;
