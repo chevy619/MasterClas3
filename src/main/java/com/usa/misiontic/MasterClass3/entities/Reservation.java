@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 @Table(name = "reservations")
@@ -23,9 +25,11 @@ public class Reservation implements Serializable {
     private Integer idReservation;
     
     @Temporal(javax.persistence.TemporalType.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Date startDate;
     
     @Temporal(javax.persistence.TemporalType.DATE)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Date devolutionDate;
     
     private String status;
