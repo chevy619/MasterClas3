@@ -4,7 +4,6 @@ package com.usa.misiontic.MasterClass3.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,11 +22,11 @@ public class Reservation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
     
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date startDate;
+    //@Temporal(javax.persistence.TemporalType.DATE)
+    private String startDate;
     
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date devolutionDate;
+    //@Temporal(javax.persistence.TemporalType.DATE)
+    private String devolutionDate;
     
     private String status;
     private Integer Score;
@@ -41,8 +40,7 @@ public class Reservation implements Serializable {
     @JoinColumn(name ="clientId")
     @JsonIgnoreProperties({"messages", "reservations"})
     private Client client;
-    
-    
+
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -51,24 +49,19 @@ public class Reservation implements Serializable {
         this.idReservation = idReservation;
     }
 
-    public Date getStartDate() {
-        
-        
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
     public String getDevolutionDate() {
-        String pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-        String date = simpleDateFormat.format( getDevolutionDate());
-        return date;
+        return devolutionDate;
     }
 
-    public void setDevolutionDate(Date devolutionDate) {
+    public void setDevolutionDate(String devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
 
@@ -78,6 +71,14 @@ public class Reservation implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getScore() {
+        return Score;
+    }
+
+    public void setScore(Integer Score) {
+        this.Score = Score;
     }
 
     public Machine getMachine() {
@@ -95,13 +96,8 @@ public class Reservation implements Serializable {
     public void setClient(Client client) {
         this.client = client;
     }
-
-    public Integer getScore() {
-        return Score;
-    }
-
-    public void setScore(Integer Score) {
-        this.Score = Score;
-    }    
+    
+    
+    
     
 }
