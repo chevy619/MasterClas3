@@ -25,7 +25,6 @@ public class ReservationController {
     private ReservationService reservationService;
     
     @GetMapping("/all")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     public List<Reservation> getAll(){
         return reservationService.getAll();
     }

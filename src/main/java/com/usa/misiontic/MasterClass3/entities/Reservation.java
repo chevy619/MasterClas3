@@ -25,11 +25,11 @@ public class Reservation implements Serializable {
     private Integer idReservation;
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private Date startDate;
     
     @Temporal(javax.persistence.TemporalType.DATE)
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @DateTimeFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private Date devolutionDate;
     
     private String status;
