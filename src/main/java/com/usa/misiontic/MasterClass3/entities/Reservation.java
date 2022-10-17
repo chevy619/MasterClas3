@@ -4,6 +4,7 @@ package com.usa.misiontic.MasterClass3.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -51,6 +52,8 @@ public class Reservation implements Serializable {
     }
 
     public Date getStartDate() {
+        
+        
         return startDate;
     }
 
@@ -58,8 +61,11 @@ public class Reservation implements Serializable {
         this.startDate = startDate;
     }
 
-    public Date getDevolutionDate() {
-        return devolutionDate;
+    public String getDevolutionDate() {
+        String pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        String date = simpleDateFormat.format( getDevolutionDate());
+        return date;
     }
 
     public void setDevolutionDate(Date devolutionDate) {

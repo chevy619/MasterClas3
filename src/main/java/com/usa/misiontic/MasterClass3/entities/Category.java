@@ -58,5 +58,6 @@ public class Category implements Serializable {
         this.machines = machines;
     }
     
+
     
 }
